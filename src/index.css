@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #7c3aed;
+  color: #fff;
+}
+
+@keyframes blob-morph-1 {
+  0%, 100% { border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%; }
+  50% { border-radius: 60% 40% 35% 65% / 55% 65% 35% 45%; }
+}
+@keyframes blob-morph-2 {
+  0%, 100% { border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%; }
+  50% { border-radius: 60% 40% 35% 65% / 55% 65% 35% 45%; }
+}
+@keyframes blob-morph-3 {
+  0%, 100% { border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%; }
+  50% { border-radius: 60% 40% 35% 65% / 55% 65% 35% 45%; }
+}
+@keyframes blob-float-1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(20px, -30px) rotate(8deg); }
+}
+@keyframes blob-float-2 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-25px, 20px) rotate(-6deg); }
+}
+@keyframes blob-float-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(15px, 15px) scale(1.06); }
+}
+
+.blob-1 {
+  border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
+  animation: blob-morph-1 9s ease-in-out infinite, blob-float-1 11s ease-in-out infinite;
+}
+.blob-2 {
+  border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
+  animation: blob-morph-2 8s ease-in-out infinite reverse, blob-float-2 13s ease-in-out infinite;
+}
+.blob-3 {
+  border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
+  animation: blob-morph-3 10s ease-in-out infinite, blob-float-3 9s ease-in-out infinite;
+}

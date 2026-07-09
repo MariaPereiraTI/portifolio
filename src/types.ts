@@ -1,0 +1,31 @@
+export interface Project {
+  tag: string;
+  tagBg: string;
+  title: string;
+  desc: string;
+  stack: string[];
+  url: string;
+  mockBg: string;
+  emoji: string;
+  image?: string;
+}
+
+export interface SkillGroup {
+  icon: string;
+  title: string;
+  items: string[];
+}
+
+export interface ExperienceEntry {
+  period: string;
+  role: string;
+  company: string;
+  desc: string;
+}
+
+export interface SocialLinks {
+  email: string;
+  linkedin: string;
+  github: string;
+  x: string;
+}
