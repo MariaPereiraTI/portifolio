@@ -7,7 +7,7 @@ export default function Skills() {
     <section id="skills" className="relative z-10 px-[6vw] pt-10 pb-[100px] bg-ink">
       <div className="max-w-[1100px] mx-auto text-white">
         <SectionHeading
-          number="02"
+          number="03"
           title="Stack & Skills"
           subtitle="Ferramentas que uso no dia a dia para construir interfaces e explorar dados."
           light

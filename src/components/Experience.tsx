@@ -6,7 +6,7 @@ export default function Experience() {
   return (
     <section id="experiencia" className="relative z-10 px-[6vw] py-[100px]">
       <div className="max-w-[1100px] mx-auto">
-        <SectionHeading number="03" title="Experiência" />
+        <SectionHeading number="04" title="Experiência" />
         <div className="flex flex-col">
           {experience.map((item) => (
             <ExperienceItem key={item.role} item={item} />

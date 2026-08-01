@@ -7,7 +7,7 @@ export default function Projects() {
     <section id="projetos" className="relative z-10 px-[6vw] pt-10 pb-[100px]">
       <div className="max-w-[1100px] mx-auto">
         <SectionHeading
-          number="01"
+          number="02"
           title="Projetos"
           subtitle="Alguns trabalhos de front-end que construí do zero, do design à implementação."
         />

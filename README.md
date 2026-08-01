@@ -29,19 +29,21 @@ src/
   components/     um componente por arquivo, responsabilidade única
     Navbar.tsx
     BackgroundBlobs.tsx
-    SectionHeading.tsx     reutilizado por Projects/Skills/Experience
+    SectionHeading.tsx     reutilizado por About/Projects/Skills/Experience
     Hero.tsx
+    About.tsx / HighlightCard.tsx
     Projects.tsx / ProjectCard.tsx
     Skills.tsx / SkillGroupCard.tsx
     Experience.tsx / ExperienceItem.tsx
     Contact.tsx
     Footer.tsx
   data/           conteúdo tipado, sem JSX — edite aqui para atualizar textos/links
+    about.ts
     projects.ts
     skills.ts
     experience.ts
     socialLinks.ts
-  types.ts        interfaces compartilhadas (Project, SkillGroup, ExperienceEntry, SocialLinks)
+  types.ts        interfaces compartilhadas (AboutHighlight, Project, SkillGroup, ExperienceEntry, SocialLinks)
   assets/         imagens (foto de perfil, screenshots dos projetos)
   App.tsx         composição das seções, sem lógica própria
   main.tsx        bootstrap do React

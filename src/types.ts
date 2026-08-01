@@ -1,3 +1,16 @@
+export interface AboutStat {
+  value: string;
+  label: string;
+}
+
+export interface AboutHighlight {
+  tag: string;
+  title: string;
+  desc: string;
+  stats?: AboutStat[];
+  badge?: string;
+}
+
 export interface Project {
   tag: string;
   tagBg: string;
