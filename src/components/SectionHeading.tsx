@@ -1,24 +1,27 @@
+import Reveal from './Reveal';
+
 interface SectionHeadingProps {
-  number: string;
   title: string;
   subtitle?: string;
   light?: boolean;
 }
 
-export default function SectionHeading({ number, title, subtitle, light }: SectionHeadingProps) {
+export default function SectionHeading({ title, subtitle, light }: SectionHeadingProps) {
   return (
-    <>
-      <div className="flex items-baseline gap-3.5 mb-3">
-        <span className={`font-heading font-extrabold text-[15px] ${light ? 'text-primary-pale' : 'text-primary'}`}>
-          {number}
-        </span>
-        <h2 className={`font-heading font-black text-[clamp(32px,4.5vw,48px)] m-0 ${light ? 'text-white' : 'text-ink'}`}>
-          {title}
-        </h2>
-      </div>
+    <Reveal className="mb-14 md:mb-16">
+      <h2
+        className={`heading-condensed font-black uppercase tracking-tight leading-[0.95] text-[clamp(28px,4.2vw,48px)] m-0 mb-4 ${
+          light ? 'text-bone' : 'text-ink'
+        }`}
+      >
+        {title}
+      </h2>
+      <div className={`h-px w-[100px] mb-5 ${light ? 'bg-sage' : 'bg-forest'}`} />
       {subtitle && (
-        <p className={`text-[17px] mb-12 max-w-[560px] ${light ? 'text-[#D9CFE6]' : 'text-[#3A2E44]'}`}>{subtitle}</p>
+        <p className={`text-[16px] leading-[1.75] max-w-[540px] ${light ? 'text-sage/90' : 'text-ink/65'}`}>
+          {subtitle}
+        </p>
       )}
-    </>
+    </Reveal>
   );
 }

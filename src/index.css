@@ -6,45 +6,61 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  background: #F4F2E8;
+}
+
 ::selection {
-  background: #7c3aed;
-  color: #fff;
+  background: #354F3A;
+  color: #F4F2E8;
 }
 
-@keyframes blob-morph-1 {
-  0%, 100% { border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%; }
-  50% { border-radius: 60% 40% 35% 65% / 55% 65% 35% 45%; }
+/* Entrance reveal used by <Reveal>. Starts hidden only once JS confirms it
+   can animate in — see useInView — so content is never stuck invisible. */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
-@keyframes blob-morph-2 {
-  0%, 100% { border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%; }
-  50% { border-radius: 60% 40% 35% 65% / 55% 65% 35% 45%; }
-}
-@keyframes blob-morph-3 {
-  0%, 100% { border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%; }
-  50% { border-radius: 60% 40% 35% 65% / 55% 65% 35% 45%; }
-}
-@keyframes blob-float-1 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(20px, -30px) rotate(8deg); }
-}
-@keyframes blob-float-2 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(-25px, 20px) rotate(-6deg); }
-}
-@keyframes blob-float-3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(15px, 15px) scale(1.06); }
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.blob-1 {
-  border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
-  animation: blob-morph-1 9s ease-in-out infinite, blob-float-1 11s ease-in-out infinite;
+/* Faint editorial grid, used sparingly behind the hero/about sections. */
+.bg-grid-lines {
+  background-image:
+    linear-gradient(to right, rgba(16, 21, 16, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 21, 16, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
-.blob-2 {
-  border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
-  animation: blob-morph-2 8s ease-in-out infinite reverse, blob-float-2 13s ease-in-out infinite;
+
+/* The Hero's condensed-title treatment (Archivo's width axis), reused for
+   every major heading on the page so titles share one typographic voice. */
+.heading-condensed {
+  font-stretch: 62.5%;
 }
-.blob-3 {
-  border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
-  animation: blob-morph-3 10s ease-in-out infinite, blob-float-3 9s ease-in-out infinite;
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
