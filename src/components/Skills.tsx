@@ -1,23 +1,24 @@
 import { skillGroups } from '../data/skills';
-import SkillGroupCard from './SkillGroupCard';
+import SkillGroupRow from './SkillGroupRow';
 import SectionHeading from './SectionHeading';
+import BorderedColumn from './BorderedColumn';
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative z-10 px-[6vw] pt-10 pb-[100px] bg-ink">
-      <div className="max-w-[1100px] mx-auto text-white">
+    <section id="skills" className="relative z-10 px-[6vw] pt-16 pb-[100px] bg-ink">
+      <BorderedColumn maxWidth={1000} dark className="px-8 md:px-10 py-9">
         <SectionHeading
-          number="03"
           title="Stack & Skills"
           subtitle="Ferramentas que uso no dia a dia para construir interfaces e explorar dados."
           light
         />
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-5">
-          {skillGroups.map((group) => (
-            <SkillGroupCard key={group.title} group={group} />
+        <div className="flex flex-col">
+          {skillGroups.map((group, i) => (
+            <SkillGroupRow key={group.title} group={group} index={`0${i + 1}`} />
           ))}
+          <div className="border-t border-night" />
         </div>
-      </div>
+      </BorderedColumn>
     </section>
   );
 }
