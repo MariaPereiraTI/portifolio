@@ -1,37 +1,55 @@
 import { FiMail, FiLinkedin, FiGithub, FiTwitter } from 'react-icons/fi';
 import { socialLinks } from '../data/socialLinks';
+import Reveal from './Reveal';
+import BorderedColumn from './BorderedColumn';
+import { darkIconButton, focusRing } from '../lib/interaction';
+import { headingCondensed } from '../lib/typography';
 
-const pillBase = 'inline-flex items-center justify-center gap-2 px-[34px] py-4 rounded-full font-bold text-base no-underline transition-colors';
+const ghostLink = `inline-flex items-center justify-center gap-2 px-7 py-4 font-medium text-sm no-underline ${darkIconButton}`;
 
 export default function Contact() {
   return (
-    <section id="contato" className="relative z-10 px-[6vw] pt-10 pb-[100px]">
-      <div className="max-w-[1100px] mx-auto bg-gradient-to-br from-primary-dark to-primary-light border-[2.5px] border-ink rounded-[32px] shadow-[8px_8px_0_#1C1024] px-[6vw] py-16 text-center">
-        <h2 className="font-heading font-black text-[clamp(32px,5vw,56px)] text-white mb-5 tracking-tight">
-          Vamos criar algo juntos?
-        </h2>
-        <p className="text-lg text-white/90 max-w-[520px] mx-auto mb-9">
-          Estou aberta a oportunidades, freelas e boas conversas sobre front-end e dados.
-        </p>
-        <div className="flex gap-4 justify-center flex-wrap">
-          <a href={`mailto:${socialLinks.email}`} className={`${pillBase} bg-ink text-white hover:bg-primary`}>
-            <FiMail />
-            <span>{socialLinks.email}</span>
-          </a>
-          <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className={`${pillBase} bg-white text-ink hover:bg-primary-pale`}>
-            <FiLinkedin />
-            <span>LinkedIn</span>
-          </a>
-          <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className={`${pillBase} bg-white text-ink hover:bg-primary-pale`}>
-            <FiGithub />
-            <span>GitHub</span>
-          </a>
-          <a href={socialLinks.x} target="_blank" rel="noopener noreferrer" className={`${pillBase} bg-white text-ink hover:bg-primary-pale`}>
-            <FiTwitter />
-            <span>X</span>
-          </a>
+    <section id="contato" className="relative z-10 px-[6vw] pt-6 pb-[90px]">
+      <BorderedColumn maxWidth={1100} dark>
+        <div className="bg-ink px-[6vw] py-20 text-center">
+          <Reveal>
+            <span className="text-xs font-bold uppercase tracking-[0.3em] text-sage/70 mb-6 inline-block">
+              Contato
+            </span>
+            <h2
+              className={`${headingCondensed} font-black uppercase text-[clamp(30px,5.4vw,58px)] leading-[0.95] text-paper mb-6 tracking-tight`}
+            >
+              Vamos criar
+              <br />
+              algo juntos?
+            </h2>
+            <p className="text-[17px] leading-[1.75] text-bone/65 max-w-[520px] mx-auto mb-12">
+              Estou aberta a oportunidades, freelas e boas conversas sobre front-end e dados.
+            </p>
+            <div className="flex gap-4 justify-center flex-wrap">
+              <a
+                href={`mailto:${socialLinks.email}`}
+                className={`inline-flex items-center justify-center gap-2 px-7 py-4 font-medium text-sm no-underline bg-bone text-ink transition-colors hover:bg-sage ${focusRing}`}
+              >
+                <FiMail aria-hidden="true" />
+                <span>{socialLinks.email}</span>
+              </a>
+              <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className={ghostLink}>
+                <FiLinkedin aria-hidden="true" />
+                <span>LinkedIn</span>
+              </a>
+              <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className={ghostLink}>
+                <FiGithub aria-hidden="true" />
+                <span>GitHub</span>
+              </a>
+              <a href={socialLinks.x} target="_blank" rel="noopener noreferrer" className={ghostLink}>
+                <FiTwitter aria-hidden="true" />
+                <span>X</span>
+              </a>
+            </div>
+          </Reveal>
         </div>
-      </div>
+      </BorderedColumn>
     </section>
   );
 }
