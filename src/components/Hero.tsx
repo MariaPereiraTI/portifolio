@@ -318,7 +318,7 @@ export default function Hero() {
         <div className="relative mx-4 md:mx-auto md:w-[90%] md:max-w-[880px] px-7 pt-7 pb-7.5 max-md:px-0">
           <p className="text-[15px] md:text-[17px] leading-[1.75] text-sage max-w-[620px] m-0">
             Comecei a programar aos 16 anos e, desde então, tenho sido péssima em ficar parada. Hoje
-            sou Engenheira de Software na <a href="#experiencia" className={bioLink}>ParaDevs</a>,
+            sou Engenheira de Software na <a href="https://paradevs.io/software-house" className={bioLink}>ParaDevs</a>,
             exploro Web3 e estou levando essa trajetória ainda mais longe como intercambista na
             China. Gosto de transformar ideias em coisas que funcionam, entrar em projetos que
             parecem difíceis demais e descobrir, no processo, até onde consigo chegar.
