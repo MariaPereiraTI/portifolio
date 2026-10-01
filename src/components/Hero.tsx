@@ -359,7 +359,7 @@ export default function Hero() {
             className="text-[12px] tracking-[0.3em] text-sage bg-ink border border-forest px-[14px] py-[6px]"
             style={{ fontFamily: "'Noto Sans JP', sans-serif" }}
           >
-            フロントエンド × データ
+            ソフトウェアエンジニア
           </span>
           <EdgeMarks />
         </div>
