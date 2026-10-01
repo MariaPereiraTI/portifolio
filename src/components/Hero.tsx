@@ -217,7 +217,7 @@ export default function Hero() {
                 <div className="text-[10px] font-medium uppercase tracking-[0.14em] text-sage/70 tabular-nums">
                   Formação
                 </div>
-                <div className="text-[13px] text-bone mt-1.5">CETI Liceu Parnaibano</div>
+                <div className="text-[13px] text-bone mt-1.5">Sistemas de Computação (TSC)</div>
               </div>
               <div>
                 <div className="text-[10px] font-medium uppercase tracking-[0.14em] text-sage/70 tabular-nums">
@@ -228,7 +228,7 @@ export default function Hero() {
                     aria-hidden="true"
                     className="w-[7px] h-[7px] bg-sage shrink-0 animate-status-pulse"
                   />
-                  <span className="text-[13px] text-bone">Aberta a oportunidades</span>
+                  <span className="text-[13px] text-bone">Atuando na ParaDevs</span>
                 </div>
               </div>
             </div>
@@ -285,7 +285,7 @@ export default function Hero() {
                 <div className="text-[9px] font-medium uppercase tracking-[0.14em] text-sage/70 tabular-nums">
                   Formação
                 </div>
-                <div className="text-[11px] text-bone mt-1">CETI Liceu Parnaibano</div>
+                <div className="text-[11px] text-bone mt-1">Sistemas de Computação (TSC)</div>
               </div>
               <div className="px-4 py-4">
                 <div className="text-[9px] font-medium uppercase tracking-[0.14em] text-sage/70 tabular-nums">
@@ -296,7 +296,7 @@ export default function Hero() {
                     aria-hidden="true"
                     className="w-[7px] h-[7px] bg-sage shrink-0 animate-status-pulse"
                   />
-                  <span className="text-[11px] text-bone">Aberta a oportunidades</span>
+                  <span className="text-[11px] text-bone">Atuando na ParaDevs</span>
                 </div>
               </div>
             </div>
