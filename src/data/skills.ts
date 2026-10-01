@@ -1,7 +1,10 @@
 import type { SkillGroup } from '../types';
 
-export const skillGroups: SkillGroup[] = [
-  { icon: '🎨', title: 'Front-end', items: ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js', 'Tailwind'] },
-  { icon: '📊', title: 'Dados', items: ['Python', 'SQL', 'Pandas', 'Excel', 'Power BI'] },
-  { icon: '🛠️', title: 'Ferramentas', items: ['Git', 'Figma', 'VS Code', 'Vercel'] },
+export type SkillGroupStatic = Omit<SkillGroup, 'title'>;
+
+/** Non-text fields only — title is translated, see i18n/content.ts. */
+export const skillGroupsStatic: SkillGroupStatic[] = [
+  { icon: '🎨', items: ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js', 'Tailwind'] },
+  { icon: '📊', items: ['Python', 'SQL', 'Pandas', 'Excel', 'Power BI'] },
+  { icon: '🛠️', items: ['Git', 'Figma', 'VS Code', 'Vercel'] },
 ];

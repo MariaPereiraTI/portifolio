@@ -1,21 +1,27 @@
 import { useEffect, useRef, useState } from 'react';
 import { FiCheck, FiChevronDown } from 'react-icons/fi';
 import { focusRing } from '../lib/interaction';
+import { useLanguage, type Lang } from '../i18n/LanguageContext';
+import { useContent } from '../i18n/content';
 
-const languages = [
-  { code: 'PT', label: 'Português' },
-  { code: 'EN', label: 'English' },
-  { code: 'ES', label: 'Español' },
+type Code = 'PT' | 'EN' | 'ES';
+
+// ES has no translation yet, so it falls back to the Portuguese content set.
+const languages: { code: Code; label: string; lang: Lang }[] = [
+  { code: 'PT', label: 'Português', lang: 'pt' },
+  { code: 'EN', label: 'English', lang: 'en' },
+  { code: 'ES', label: 'Español', lang: 'pt' },
 ];
 
 /**
- * Visual-only language switcher, styled to match the Hero's editorial grid
- * (sharp corners, forest/sage/paper interaction vocabulary). Selecting an
- * option only updates which one shows a checkmark — the page content isn't
- * translated yet.
+ * Language switcher styled to match the Hero's editorial grid (sharp
+ * corners, forest/sage/paper interaction vocabulary). Drives the shared
+ * LanguageContext, so picking PT/EN actually re-translates the page.
  */
 export default function LanguageSwitcher() {
-  const [lang, setLang] = useState('PT');
+  const { setLang } = useLanguage();
+  const t = useContent();
+  const [selected, setSelected] = useState<Code>('PT');
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -46,10 +52,10 @@ export default function LanguageSwitcher() {
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         aria-haspopup="listbox"
-        aria-label={`Idioma selecionado: ${lang}`}
+        aria-label={`${t.languageSwitcher.selectedLanguage}: ${selected}`}
         className={`flex items-center gap-1.5 h-11 px-3 border border-forest text-sage text-xs font-bold tracking-[0.1em] no-underline hover:border-sage hover:text-paper transition-colors duration-200 ${focusRing}`}
       >
-        {lang}
+        {selected}
         <FiChevronDown
           aria-hidden="true"
           size={13}
@@ -60,11 +66,11 @@ export default function LanguageSwitcher() {
       {open && (
         <ul
           role="listbox"
-          aria-label="Selecionar idioma"
+          aria-label={t.languageSwitcher.selectLanguage}
           className="absolute right-0 top-[calc(100%+6px)] w-[168px] bg-ink border border-night z-50"
         >
           {languages.map((l) => {
-            const isActive = lang === l.code;
+            const isActive = selected === l.code;
             return (
               <li key={l.code} role="presentation">
                 <button
@@ -72,7 +78,8 @@ export default function LanguageSwitcher() {
                   role="option"
                   aria-selected={isActive}
                   onClick={() => {
-                    setLang(l.code);
+                    setSelected(l.code);
+                    setLang(l.lang);
                     setOpen(false);
                   }}
                   className={`w-full flex items-center justify-between gap-3 px-4 py-3 text-sm no-underline border-b border-night last:border-b-0 transition-colors duration-200 ${

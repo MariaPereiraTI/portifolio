@@ -2,6 +2,7 @@ import type { Project } from '../types';
 import Reveal from './Reveal';
 import { focusRing } from '../lib/interaction';
 import { label, headingCondensed } from '../lib/typography';
+import { useContent } from '../i18n/content';
 
 interface ProjectCardProps {
   project: Project;
@@ -10,6 +11,7 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, index, variant = 'secondary' }: ProjectCardProps) {
+  const t = useContent();
   const { tag, tagBg, title, desc, stack, url, mockBg, emoji, image } = project;
   const isFeatured = variant === 'featured';
 
@@ -83,7 +85,7 @@ export default function ProjectCard({ project, index, variant = 'secondary' }: P
             ))}
           </div>
           <span className="inline-flex items-center gap-1.5 font-bold text-[14px] text-forest transition-[gap,color] group-hover:gap-2.5 group-hover:text-ink">
-            Ver ao vivo <span aria-hidden="true">↗</span>
+            {t.projects.viewLive} <span aria-hidden="true">↗</span>
           </span>
         </div>
       </a>

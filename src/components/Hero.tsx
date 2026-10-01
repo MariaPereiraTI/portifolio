@@ -4,31 +4,33 @@ import perfilImg from '../assets/perfil.png';
 import { focusRing, darkIconButton } from '../lib/interaction';
 import { PlusMark, EdgeMarks } from './GridMark';
 import LanguageSwitcher from './LanguageSwitcher';
-
-const navLinks = [
-  { href: '#sobre', label: 'Sobre', id: 'sobre' },
-  { href: '#projetos', label: 'Projetos', id: 'projetos' },
-  { href: '#skills', label: 'Skills', id: 'skills' },
-  { href: '#experiencia', label: 'Experiência', id: 'experiencia' },
-];
-
-const iconLinks = [
-  { Icon: FiGithub, label: 'GitHub', href: 'https://github.com/MariaPereiraTI', external: true },
-  {
-    Icon: FiLinkedin,
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/maria-clara-pereira-santos/',
-    external: true,
-  },
-  { Icon: FiTwitter, label: 'X', href: 'https://x.com/ZeninnDev', external: true },
-  { Icon: FiMail, label: 'E-mail', href: 'mailto:mariclarapereira.ti@gmail.com', external: false },
-];
+import { useContent } from '../i18n/content';
 
 const bioLink = `text-paper font-semibold no-underline border-b border-olive hover:text-sage hover:border-sage transition-colors duration-200 ${focusRing}`;
 
 export default function Hero() {
+  const t = useContent();
   const [active, setActive] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: '#sobre', label: t.nav.about, id: 'sobre' },
+    { href: '#projetos', label: t.nav.projects, id: 'projetos' },
+    { href: '#skills', label: t.nav.skills, id: 'skills' },
+    { href: '#experiencia', label: t.nav.experience, id: 'experiencia' },
+  ];
+
+  const iconLinks = [
+    { Icon: FiGithub, label: 'GitHub', href: 'https://github.com/MariaPereiraTI', external: true },
+    {
+      Icon: FiLinkedin,
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/maria-clara-pereira-santos/',
+      external: true,
+    },
+    { Icon: FiTwitter, label: 'X', href: 'https://x.com/ZeninnDev', external: true },
+    { Icon: FiMail, label: t.hero.emailLabel, href: 'mailto:mariclarapereira.ti@gmail.com', external: false },
+  ];
 
   useEffect(() => {
     const sections = navLinks
@@ -55,7 +57,7 @@ export default function Hero() {
       href="#contato"
       className={`group inline-flex items-center h-11 bg-forest text-paper pl-4 pr-1 text-sm font-medium no-underline hover:bg-night transition-colors duration-200 ${focusRing}`}
     >
-      Contato
+      {t.nav.contact}
       <span className="ml-3 w-[34px] h-[34px] flex items-center justify-center bg-ink text-bone transition-transform duration-200 group-hover:translate-y-0.5">
         <span aria-hidden="true">↓</span>
       </span>
@@ -69,7 +71,7 @@ export default function Hero() {
         <div className="relative mx-4 md:mx-auto md:w-[90%] md:max-w-[880px] h-16">
           {/* Desktop/tablet: logo centrado, links à esquerda, contato à direita */}
           <nav
-            aria-label="Principal"
+            aria-label={t.nav.mainNav}
             className="hidden md:grid grid-cols-[1fr_64px_1fr] h-full"
           >
             <div className="flex items-center gap-7 pl-6 h-full">
@@ -98,7 +100,7 @@ export default function Hero() {
 
             <a
               href="#inicio"
-              aria-label="Início"
+              aria-label={t.nav.home}
               className={`flex items-center justify-center h-full border-x border-night text-[13px] text-sage no-underline hover:bg-night transition-colors duration-200 ${focusRing}`}
             >
               {'</>'}
@@ -114,7 +116,7 @@ export default function Hero() {
           <div className="md:hidden grid grid-cols-[60px_1fr_auto] h-full items-center">
             <a
               href="#inicio"
-              aria-label="Início"
+              aria-label={t.nav.home}
               className={`flex items-center justify-center h-full border-r border-night text-[13px] text-sage no-underline ${focusRing}`}
             >
               {'</>'}
@@ -126,7 +128,7 @@ export default function Hero() {
                 onClick={() => setMenuOpen((open) => !open)}
                 aria-expanded={menuOpen}
                 aria-controls="hero-mobile-menu"
-                aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+                aria-label={menuOpen ? t.nav.closeMenu : t.nav.openMenu}
                 className={`flex items-center gap-2 h-11 px-3 min-w-[44px] text-[12px] uppercase tracking-[0.14em] text-sage ${focusRing}`}
               >
                 <span aria-hidden="true" className="flex flex-col gap-[4px] w-4">
@@ -199,7 +201,7 @@ export default function Hero() {
               </h1>
               <p className="text-[13px] text-sage/75 mt-2 mb-0">@ZeninnDev</p>
               <p className="text-[12px] font-medium uppercase tracking-[0.16em] text-bone tabular-nums mt-3 mb-0">
-                Engenheira de Software &middot; Dev Front-end
+                {t.hero.role}
               </p>
               <div className="flex gap-2 mt-5">
                 {iconLinks.map(({ Icon, label, href, external }) => (
@@ -220,20 +222,20 @@ export default function Hero() {
             <div className="flex flex-col justify-center gap-[22px] px-6 py-[34px]">
               <div>
                 <div className="text-[10px] font-medium uppercase tracking-[0.14em] text-sage/70 tabular-nums">
-                  Formação
+                  {t.hero.education}
                 </div>
-                <div className="text-[13px] text-bone mt-1.5">Sistemas de Computação (TSC)</div>
+                <div className="text-[13px] text-bone mt-1.5">{t.hero.educationValue}</div>
               </div>
               <div>
                 <div className="text-[10px] font-medium uppercase tracking-[0.14em] text-sage/70 tabular-nums">
-                  Status
+                  {t.hero.status}
                 </div>
                 <div className="flex items-center gap-2 mt-1.5">
                   <span
                     aria-hidden="true"
                     className="w-[7px] h-[7px] bg-sage shrink-0 animate-status-pulse"
                   />
-                  <span className="text-[13px] text-bone">Atuando na ParaDevs</span>
+                  <span className="text-[13px] text-bone">{t.hero.statusValue}</span>
                 </div>
               </div>
             </div>
@@ -263,9 +265,9 @@ export default function Hero() {
                 </h1>
                 <p className="text-[12px] text-sage/75 mt-2 mb-0">@ZeninnDev</p>
                 <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-bone tabular-nums mt-2 mb-0">
-                  Engenheira de Software
+                  {t.hero.role.split(' · ')[0]}
                   <br />
-                  Dev Front-end
+                  {t.hero.role.split(' · ')[1]}
                 </p>
               </div>
             </div>
@@ -288,20 +290,20 @@ export default function Hero() {
             <div className="grid grid-cols-2 divide-x divide-night border-t border-night">
               <div className="px-4 py-4">
                 <div className="text-[9px] font-medium uppercase tracking-[0.14em] text-sage/70 tabular-nums">
-                  Formação
+                  {t.hero.education}
                 </div>
-                <div className="text-[11px] text-bone mt-1">Sistemas de Computação (TSC)</div>
+                <div className="text-[11px] text-bone mt-1">{t.hero.educationValue}</div>
               </div>
               <div className="px-4 py-4">
                 <div className="text-[9px] font-medium uppercase tracking-[0.14em] text-sage/70 tabular-nums">
-                  Status
+                  {t.hero.status}
                 </div>
                 <div className="flex items-center gap-1.5 mt-1">
                   <span
                     aria-hidden="true"
                     className="w-[7px] h-[7px] bg-sage shrink-0 animate-status-pulse"
                   />
-                  <span className="text-[11px] text-bone">Atuando na ParaDevs</span>
+                  <span className="text-[11px] text-bone">{t.hero.statusValue}</span>
                 </div>
               </div>
             </div>
@@ -322,11 +324,9 @@ export default function Hero() {
       <div className="relative w-full border-b border-night shrink-0">
         <div className="relative mx-4 md:mx-auto md:w-[90%] md:max-w-[880px] px-7 pt-7 pb-7.5 max-md:px-0">
           <p className="text-[15px] md:text-[17px] leading-[1.75] text-sage max-w-[620px] m-0">
-            Comecei a programar aos 16 anos e, desde então, tenho sido péssima em ficar parada. Hoje
-            sou Engenheira de Software na <a href="https://paradevs.io/software-house" className={bioLink}>ParaDevs</a>,
-            exploro Web3 e estou levando essa trajetória ainda mais longe como intercambista na
-            China. Gosto de transformar ideias em coisas que funcionam, entrar em projetos que
-            parecem difíceis demais e descobrir, no processo, até onde consigo chegar.
+            {t.hero.bioBefore}
+            <a href="https://paradevs.io/software-house" className={bioLink}>ParaDevs</a>
+            {t.hero.bioAfter}
           </p>
 
           <div className="flex gap-6 mt-5">
@@ -334,13 +334,13 @@ export default function Hero() {
               href="#projetos"
               className={`min-h-[44px] flex items-center text-[12px] font-medium uppercase tracking-[0.14em] tabular-nums text-sage no-underline hover:text-paper hover:tracking-[0.2em] transition-all duration-300 ${focusRing}`}
             >
-              Ver projetos <span aria-hidden="true">↓</span>
+              {t.hero.viewProjects} <span aria-hidden="true">↓</span>
             </a>
             <a
               href="#contato"
               className={`min-h-[44px] flex items-center text-[12px] font-medium uppercase tracking-[0.14em] tabular-nums text-sage no-underline hover:text-paper hover:tracking-[0.2em] transition-all duration-300 ${focusRing}`}
             >
-              Falar comigo <span aria-hidden="true">→</span>
+              {t.hero.getInTouch} <span aria-hidden="true">→</span>
             </a>
           </div>
 
