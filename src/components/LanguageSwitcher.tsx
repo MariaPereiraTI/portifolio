@@ -6,17 +6,16 @@ import { useContent } from '../i18n/content';
 
 type Code = 'PT' | 'EN' | 'ES';
 
-// ES has no translation yet, so it falls back to the Portuguese content set.
 const languages: { code: Code; label: string; lang: Lang }[] = [
   { code: 'PT', label: 'Português', lang: 'pt' },
   { code: 'EN', label: 'English', lang: 'en' },
-  { code: 'ES', label: 'Español', lang: 'pt' },
+  { code: 'ES', label: 'Español', lang: 'es' },
 ];
 
 /**
  * Language switcher styled to match the Hero's editorial grid (sharp
  * corners, forest/sage/paper interaction vocabulary). Drives the shared
- * LanguageContext, so picking PT/EN actually re-translates the page.
+ * LanguageContext, so picking PT/EN/ES actually re-translates the page.
  */
 export default function LanguageSwitcher() {
   const { setLang } = useLanguage();

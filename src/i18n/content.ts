@@ -305,6 +305,115 @@ export const content: Record<Lang, Content> = {
       selectedLanguage: 'Selected language',
     },
   },
+  es: {
+    nav: {
+      about: 'Sobre',
+      projects: 'Proyectos',
+      skills: 'Skills',
+      experience: 'Experiencia',
+      home: 'Inicio',
+      mainNav: 'Principal',
+      contact: 'Contacto',
+      openMenu: 'Abrir menú',
+      closeMenu: 'Cerrar menú',
+    },
+    hero: {
+      role: 'Ingeniera de Software · Dev Front-end',
+      education: 'Formación',
+      educationValue: 'Sistemas de Computación (TSC)',
+      status: 'Estado',
+      statusValue: 'Trabajando en ParaDevs',
+      bioBefore:
+        'Empecé a programar a los 16 años y, desde entonces, he sido pésima para quedarme quieta. Hoy soy Ingeniera de Software en ',
+      bioAfter:
+        ', exploro Web3 y estoy llevando esa trayectoria aún más lejos como intercambista en China. Me gusta transformar ideas en cosas que funcionan, meterme en proyectos que parecen demasiado difíciles y descubrir, en el proceso, hasta dónde puedo llegar.',
+      viewProjects: 'Ver proyectos',
+      getInTouch: 'Hablemos',
+      emailLabel: 'Correo',
+    },
+    about: {
+      title: 'Sobre mí',
+      subtitle: 'Mi formación y los logros de los que más me enorgullezco hasta ahora.',
+      introBefore:
+        'Me gradué del CETI Liceu Parnaibano, donde desarrollé habilidades prácticas en mantenimiento de computadoras, redes, desarrollo en ',
+      introAfter: ', bases de datos y estructuras de datos — una base sólida que llevo a cada proyecto que construyo.',
+      highlights: [
+        {
+          tag: 'Programa "De Piauí para el Mundo"',
+          title: '1er lugar en la pista UESPI e intercambio a China',
+          desc: 'Por invitación del Prof. Dr. Rodrigo Baluz, me uní al programa "De Piauí para el Mundo", liderando un equipo junto a Jeiel Santos, Josué Klaysler y Matheus Wallace Alves Cunha. Pasamos por ideación, documentación, construcción del MVP, pitch técnico y pitch de negocio, resolviendo un problema real de la Universidad Estatal de Piauí (UESPI), hasta la gran final en Teresina, donde conquistamos el 1er lugar de la pista UESPI.',
+          stats: [{ value: '1er', label: 'lugar en la pista UESPI' }],
+          badge: 'Intercambio conquistado a China 🇨🇳✈️',
+        },
+        {
+          tag: 'Proyecto académico · Dupla',
+          title: 'Nota máxima con la mitad del equipo',
+          desc: 'En un proyecto pensado para equipos de tres personas, Jeiel Santos y yo asumimos solos todas las etapas del desarrollo de software — levantamiento de requisitos, casos de uso, documentación y creación del prototipo funcional. Aun con la carga extra, fuimos una de las dos únicas duplas en alcanzar la nota máxima entre los equipos.',
+          badge: 'Invitación para beca estudiantil y continuidad del proyecto',
+        },
+        {
+          tag: 'Maratona Tech 2024 · Olimpiada Nacional de Soluciones Tecnológicas',
+          title: '35º lugar nacional entre más de 2 mil escuelas',
+          desc: 'Todavía en el CETI Liceu Parnaibano, participé en la Maratona Tech 2024 con Saúde na Zona Rural — un chatbot creado para llevar información, apoyo y salud a zonas rurales. Nuestro equipo conquistó el 35º lugar entre más de 2 mil escuelas y 200 mil estudiantes de todo Brasil.',
+          stats: [
+            { value: '35º', label: 'lugar entre +2 mil escuelas' },
+            { value: '200 mil+', label: 'estudiantes en todo Brasil' },
+          ],
+        },
+      ],
+    },
+    projects: {
+      title: 'Proyectos',
+      subtitle: 'Algunos trabajos de front-end que construí desde cero, del diseño a la implementación.',
+      viewLive: 'Ver en vivo',
+      items: [
+        {
+          tag: 'App · IA & Web3',
+          title: 'Xiaolee — AI Agent',
+          desc: 'Interfaz de chat estilo kawaii para un asistente de IA que ayuda con swaps, campañas y pagos en cripto. Construí toda la experiencia conversacional y el dashboard del usuario.',
+        },
+        {
+          tag: 'Landing Page',
+          title: 'Xiaolee — Landing Page',
+          desc: 'Landing page de marketing para la plataforma Xiaolee, que transforma presencia digital en ingresos. Enfocada en storytelling visual, secciones animadas y un fuerte call-to-action.',
+        },
+        {
+          tag: 'Landing Page · Tech',
+          title: 'Jurisense',
+          desc: 'Landing page para un producto de tecnología jurídica, con identidad visual sobria y enfoque en conversión para abogados y despachos jurídicos.',
+        },
+      ],
+    },
+    skills: {
+      title: 'Stack & Skills',
+      subtitle: 'Herramientas que uso en el día a día para construir interfaces y explorar datos.',
+      groups: [{ title: 'Front-end' }, { title: 'Datos' }, { title: 'Herramientas' }],
+    },
+    experience: {
+      title: 'Experiencia',
+      items: [
+        {
+          period: '2026 — actual',
+          role: 'Ingeniera de Software Web3 | Front-end',
+          desc: 'Enfoque en el desarrollo frontend de aplicaciones descentralizadas, transformando arquitecturas complejas de blockchain en experiencias de usuario (UX) fluidas, intuitivas y seguras.',
+        },
+        {
+          period: '2025 — 2026',
+          role: 'Analista de TI',
+          desc: 'Actuación técnica enfocada en el soporte de sistemas, garantía de calidad y soporte a la infraestructura tecnológica de la empresa. Responsable de asegurar la estabilidad de las herramientas corporativas y apoyar la continuidad de los procesos de negocio mediante diagnósticos precisos y mejora continua.',
+        },
+      ],
+    },
+    contact: {
+      eyebrow: 'Contacto',
+      title: '¿Creamos algo juntos?',
+      subtitle: 'Estoy abierta a oportunidades, freelances y buenas conversaciones sobre front-end y datos.',
+    },
+    languageSwitcher: {
+      selectLanguage: 'Seleccionar idioma',
+      selectedLanguage: 'Idioma seleccionado',
+    },
+  },
 };
 
 export function useContent(): Content {
