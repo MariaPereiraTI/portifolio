@@ -3,6 +3,7 @@ import { FiGithub, FiLinkedin, FiTwitter, FiMail } from 'react-icons/fi';
 import perfilImg from '../assets/perfil.png';
 import { focusRing, darkIconButton } from '../lib/interaction';
 import { PlusMark, EdgeMarks } from './GridMark';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const navLinks = [
   { href: '#sobre', label: 'Sobre', id: 'sobre' },
@@ -103,7 +104,10 @@ export default function Hero() {
               {'</>'}
             </a>
 
-            <div className="flex items-center justify-end pr-3 h-full">{contatoButton}</div>
+            <div className="flex items-center justify-end gap-3 pr-3 h-full">
+              <LanguageSwitcher />
+              {contatoButton}
+            </div>
           </nav>
 
           {/* Mobile: logo à esquerda, menu + contato à direita */}
@@ -131,6 +135,7 @@ export default function Hero() {
                 </span>
                 Menu
               </button>
+              <LanguageSwitcher />
               {contatoButton}
             </div>
           </div>
