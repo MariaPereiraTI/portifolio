@@ -21,6 +21,8 @@ export interface Project {
   mockBg: string;
   emoji: string;
   image?: string;
+  /** url points to a source repository instead of a live site */
+  isRepo?: boolean;
 }
 
 export interface SkillGroup {

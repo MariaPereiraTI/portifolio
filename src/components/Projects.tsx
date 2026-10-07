@@ -16,9 +16,11 @@ export default function Projects() {
         <SectionHeading title={t.projects.title} subtitle={t.projects.subtitle} />
         <div className="flex flex-col gap-12">
           <ProjectCard project={featured} index="01" variant="featured" />
-          {rest.map((project, i) => (
-            <ProjectCard key={project.title} project={project} index={`0${i + 2}`} />
-          ))}
+          <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+            {rest.map((project, i) => (
+              <ProjectCard key={project.title} project={project} index={String(i + 2).padStart(2, '0')} />
+            ))}
+          </div>
         </div>
       </BorderedColumn>
     </section>

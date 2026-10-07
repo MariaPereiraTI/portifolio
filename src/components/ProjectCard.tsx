@@ -12,7 +12,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project, index, variant = 'secondary' }: ProjectCardProps) {
   const t = useContent();
-  const { tag, tagBg, title, desc, stack, url, mockBg, emoji, image } = project;
+  const { tag, tagBg, title, desc, stack, url, mockBg, emoji, image, isRepo } = project;
   const isFeatured = variant === 'featured';
 
   return (
@@ -21,8 +21,10 @@ export default function ProjectCard({ project, index, variant = 'secondary' }: P
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className={`group no-underline text-inherit grid gap-8 items-center border-t border-forest/20 pt-9 pb-1 max-md:grid-cols-1 ${focusRing} ${
-          isFeatured ? 'md:grid-cols-[1fr_1.15fr] md:gap-14' : 'md:grid-cols-[240px_1fr] md:gap-10'
+        className={`group no-underline text-inherit border-t border-forest/20 pt-9 pb-1 h-full ${focusRing} ${
+          isFeatured
+            ? 'grid gap-8 items-center max-md:grid-cols-1 md:grid-cols-[1fr_1.15fr] md:gap-14'
+            : 'flex flex-col gap-6'
         }`}
       >
         <div className={isFeatured ? 'md:order-2' : ''}>
@@ -48,14 +50,14 @@ export default function ProjectCard({ project, index, variant = 'secondary' }: P
                     isFeatured ? 'text-6xl' : 'text-4xl'
                   }`}
                 >
-                  {emoji}
+                  
                 </div>
               )}
             </div>
           </div>
         </div>
 
-        <div className={isFeatured ? 'md:order-1' : ''}>
+        <div className={isFeatured ? 'md:order-1' : 'flex flex-col flex-1'}>
           <div className="flex items-center gap-3 mb-4">
             <span className="text-xs font-bold text-olive" aria-hidden="true">{index}</span>
             <span className={`inline-flex items-center gap-2 text-[11px] text-forest border border-forest/40 px-3 py-1 ${label}`}>
@@ -72,12 +74,12 @@ export default function ProjectCard({ project, index, variant = 'secondary' }: P
           </h3>
           <p
             className={`text-ink/70 leading-[1.75] mb-5 ${
-              isFeatured ? 'text-[15.5px] max-w-[440px]' : 'text-[14px] max-w-[400px]'
+              isFeatured ? 'text-[15.5px] max-w-[440px]' : 'text-[14px]'
             }`}
           >
             {desc}
           </p>
-          <div className="flex flex-wrap gap-2 mb-5">
+          <div className={`flex flex-wrap gap-2 ${isFeatured ? 'mb-5' : 'mb-5 mt-auto'}`}>
             {stack.map((s) => (
               <span key={s} className="text-[11.5px] font-semibold border border-ink/20 px-2.5 py-1">
                 {s}
@@ -85,7 +87,7 @@ export default function ProjectCard({ project, index, variant = 'secondary' }: P
             ))}
           </div>
           <span className="inline-flex items-center gap-1.5 font-bold text-[14px] text-forest transition-[gap,color] group-hover:gap-2.5 group-hover:text-ink">
-            {t.projects.viewLive} <span aria-hidden="true">↗</span>
+            {isRepo ? t.projects.viewRepo : t.projects.viewLive} <span aria-hidden="true">↗</span>
           </span>
         </div>
       </a>

@@ -64,6 +64,7 @@ interface Content {
     title: string;
     subtitle: string;
     viewLive: string;
+    viewRepo: string;
     items: ProjectText[];
   };
   skills: {
@@ -148,6 +149,7 @@ export const content: Record<Lang, Content> = {
       title: 'Projetos',
       subtitle: 'Alguns trabalhos de front-end que construí do zero, do design à implementação.',
       viewLive: 'Ver ao vivo',
+      viewRepo: 'Ver repositório',
       items: [
         {
           tag: 'App · IA & Web3',
@@ -163,6 +165,31 @@ export const content: Record<Lang, Content> = {
           tag: 'Landing Page · Tech',
           title: 'Jurisense',
           desc: 'Landing page para produto de tecnologia jurídica, com identidade visual sóbria e foco em conversão para o público de advocacia e escritórios de direito.',
+        },
+        {
+          tag: 'App Mobile · IA & Web3',
+          title: 'Xiaolee Mobile',
+          desc: 'Versão mobile do assistente de IA Xiaolee, com download disponível direto na landing page da plataforma.',
+        },
+        {
+          tag: 'Landing Page & App · Mobilidade',
+          title: 'ChegaJunto',
+          desc: 'Landing page e app mobile (React Native) de caronas universitárias com recompensas em cripto na Solana, com piloto ativo no campus da UESPI.',
+        },
+        {
+          tag: 'Bot · Web3',
+          title: 'Recall',
+          desc: 'Bot de grupo que registra decisões e compromissos no Walrus Memory e responde com recibos verificáveis. Desenvolvido na ParaDevs para o hackathon Walrus Sessions 8.',
+        },
+        {
+          tag: 'Backend · Web3',
+          title: 'TrackFund3',
+          desc: 'Plataforma para investir em música na Solana, com NFTs de músicas tokenizadas e participação vitalícia em royalties. Responsável pelo desenvolvimento do backend em TypeScript.',
+        },
+        {
+          tag: 'App · Web3 & Games',
+          title: 'ChainPlay',
+          desc: 'Minigames de futebol com apostas on-chain na Solana, usando dados reais da Copa do Mundo. Cada aposta gera um NFT-ticket que resgata o prêmio. Desenvolvido na ParaDevs.',
         },
       ],
     },
@@ -257,6 +284,7 @@ export const content: Record<Lang, Content> = {
       title: 'Projects',
       subtitle: 'A few front-end projects I built from scratch, from design to implementation.',
       viewLive: 'View live',
+      viewRepo: 'View repository',
       items: [
         {
           tag: 'App · AI & Web3',
@@ -272,6 +300,31 @@ export const content: Record<Lang, Content> = {
           tag: 'Landing Page · Tech',
           title: 'Jurisense',
           desc: 'Landing page for a legal-tech product, with a sober visual identity focused on conversion for lawyers and law firms.',
+        },
+        {
+          tag: 'Mobile App · AI & Web3',
+          title: 'Xiaolee Mobile',
+          desc: 'Mobile version of the Xiaolee AI assistant, available to download straight from the platform landing page.',
+        },
+        {
+          tag: 'Landing Page & App · Mobility',
+          title: 'ChegaJunto',
+          desc: 'Landing page and mobile app (React Native) for university carpooling with crypto rewards on Solana, with an active pilot at the UESPI campus.',
+        },
+        {
+          tag: 'Bot · Web3',
+          title: 'Recall',
+          desc: 'A group-chat bot that records decisions and commitments in Walrus Memory and answers with verifiable receipts. Built at ParaDevs for the Walrus Sessions 8 hackathon.',
+        },
+        {
+          tag: 'Backend · Web3',
+          title: 'TrackFund3',
+          desc: 'A platform to invest in music on Solana, with NFTs of tokenized songs and lifetime royalty participation. I built the backend in TypeScript.',
+        },
+        {
+          tag: 'App · Web3 & Games',
+          title: 'ChainPlay',
+          desc: 'Football minigames with on-chain betting on Solana, powered by real World Cup data. Every bet mints an NFT ticket that redeems the prize. Built at ParaDevs.',
         },
       ],
     },
@@ -366,6 +419,7 @@ export const content: Record<Lang, Content> = {
       title: 'Proyectos',
       subtitle: 'Algunos trabajos de front-end que construí desde cero, del diseño a la implementación.',
       viewLive: 'Ver en vivo',
+      viewRepo: 'Ver repositorio',
       items: [
         {
           tag: 'App · IA & Web3',
@@ -381,6 +435,31 @@ export const content: Record<Lang, Content> = {
           tag: 'Landing Page · Tech',
           title: 'Jurisense',
           desc: 'Landing page para un producto de tecnología jurídica, con identidad visual sobria y enfoque en conversión para abogados y despachos jurídicos.',
+        },
+        {
+          tag: 'App Móvil · IA & Web3',
+          title: 'Xiaolee Mobile',
+          desc: 'Versión móvil del asistente de IA Xiaolee, con descarga disponible directamente desde la landing page de la plataforma.',
+        },
+        {
+          tag: 'Landing Page & App · Movilidad',
+          title: 'ChegaJunto',
+          desc: 'Landing page y app móvil (React Native) de viajes compartidos universitarios con recompensas en cripto en Solana, con piloto activo en el campus de la UESPI.',
+        },
+        {
+          tag: 'Bot · Web3',
+          title: 'Recall',
+          desc: 'Bot de grupo que registra decisiones y compromisos en Walrus Memory y responde con recibos verificables. Desarrollado en ParaDevs para el hackathon Walrus Sessions 8.',
+        },
+        {
+          tag: 'Backend · Web3',
+          title: 'TrackFund3',
+          desc: 'Plataforma para invertir en música en Solana, con NFTs de canciones tokenizadas y participación vitalicia en regalías. Responsable del desarrollo del backend en TypeScript.',
+        },
+        {
+          tag: 'App · Web3 & Games',
+          title: 'ChainPlay',
+          desc: 'Minijuegos de fútbol con apuestas on-chain en Solana, con datos reales del Mundial. Cada apuesta genera un NFT-ticket que canjea el premio. Desarrollado en ParaDevs.',
         },
       ],
     },
